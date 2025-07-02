@@ -13,8 +13,19 @@ const map = new maplibregl.Map({
     zoom: 13 // starting zoom
 });
 
+map.addLayer({
+    id: "wandeling",
+    source: 'wandeling_32983',
+    type: 'symbol',
+  layout: {
+
+        "text-field": ['get', 'name']
+  }
+});
+
 map.addSource('wandeling_32983', {
     type: 'geojson',
     data: './assets/wandeling.json'
+    
 });
 
