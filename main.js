@@ -9,12 +9,12 @@ const map = new maplibregl.Map({
     center: [5.66509, 51.96857],
     zoom: 13 // starting zoom
 });
-
+/*
 map.addSource('some id', {
     type: 'geojson',
     data: 'assets/wandeling.json'
 });
-
+*/
 
 const protocol = new Protocol();
 maplibregl.addProtocol("pmtiles", protocol.tile);
