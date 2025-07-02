@@ -2,6 +2,9 @@ import * as maplibregl from "https://esm.sh/maplibre-gl";
 import { Protocol } from "https://esm.sh/pmtiles";
 
 
+const protocol = new Protocol();
+maplibregl.addProtocol("pmtiles", protocol.tile);
+
 const map = new maplibregl.Map({
     container: 'mijnkaart', // container id
     //style: 'https://demotiles.maplibre.org/style.json', // style URL
@@ -10,11 +13,8 @@ const map = new maplibregl.Map({
     zoom: 13 // starting zoom
 });
 
-map.addSource('some id', {
+map.addSource('wandeling_32983', {
     type: 'geojson',
     data: './assets/wandeling.json'
 });
 
-
-const protocol = new Protocol();
-maplibregl.addProtocol("pmtiles", protocol.tile);
